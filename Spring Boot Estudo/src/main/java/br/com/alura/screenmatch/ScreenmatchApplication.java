@@ -13,11 +13,11 @@ public class ScreenmatchApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(ScreenmatchApplication.class, args);
 	}
-
+ 
 	@Override
 	public void run(String... args) throws Exception {
 		ConsumoApi consumoApi = new ConsumoApi();
-		String json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apikey=84b61422");
+		String json = consumoApi.obterDados(" ");
 		// System.out.println(json);
 		// json = consumoApi.obterDados("https://coffee.alexflipnote.dev/random.json");
 
