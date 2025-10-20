@@ -2,6 +2,7 @@ package com.example.Modulo.Tres.AtividadeSete;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,8 +14,17 @@ public class Main {
                 new Produto("Monitor", 900.0, "Eletrônicos"),
                 new Produto("Mesa", 700.0, "Móveis")
         );
-        produtos.stream()
-                .filter(p -> )
+        List<Produto> produtosFiltrados = produtos.stream()
+                .filter(p -> p.getCategoria().equals("Eletrônicos"))
+                .filter(p -> p.getPreco() < 1000)
+                .sorted((p1, p2) -> Double.compare(p1.getPreco(), p2.getPreco()))
+                .collect(Collectors.toList());
 
+        System.out.println(produtosFiltrados);
     }
 }
+
+
+
+
+
